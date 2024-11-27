@@ -12,8 +12,8 @@ export default function PlayersTest({players}) {
 
   return (
     <ul>
-      {players.map((player) => {
-        return <li> {player} </li>
+      {players.map((player, index) => {
+        return <li key={index}> {player} </li>
       })}
     </ul>
   )
