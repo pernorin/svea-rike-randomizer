@@ -24,7 +24,7 @@ function App() {
       {players.length < 1 && (
         <ChoosePlayers handleSetPlayers={handleSetPlayers} />
       )}
-      {players.length > 1 && <PlayersTest players={players} />}
+      {/*players.length > 1 && <PlayersTest players={players} />*/}
       {players.length > 1 && <PlayerRandomizer players={players} setPlayers={setPlayers} />}
       {/* <button onClick={handleNextPlayer}>Nästa spelare</button> */}
     </>
