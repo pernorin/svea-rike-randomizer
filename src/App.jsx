@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import ChoosePlayers from './components/ChoosePlayers';
-import PlayersTest from './components/PlayersTest';
 import PlayerRandomizer from './components/PlayerRandomizer';
 
 function App() {
@@ -33,7 +32,6 @@ function App() {
         <ChoosePlayers handleSetPlayers={handleSetPlayers} />
       )}
       {players.length > 1 && <button onClick={() =>setPlayers([])}>Avsluta</button>}
-      {/*players.length > 1 && <PlayersTest players={players} />*/}
       {players.length > 1 && <PlayerRandomizer players={players} setPlayers={setPlayers} shufflePlayers={shufflePlayers}/>}      
     </>
   );

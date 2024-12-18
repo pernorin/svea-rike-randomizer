@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import PlayerCrest from './PlayerCrest';
 //  https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
 export default function PlayerRandomizer({
   players,
@@ -6,7 +7,7 @@ export default function PlayerRandomizer({
   shufflePlayers,
 }) {
   const [playersLength, setPlayersLength] = useState(players.length - 1);
-  const list = useRef();
+  //const list = useRef();
 
   function handleOnClick() {
     const playerArray = [...players];
@@ -19,17 +20,18 @@ export default function PlayerRandomizer({
     if (playersLength >= 0) {
       setPlayersLength((prev) => prev - 1);
     }
-    console.log(
-      playersLength
-      // playersLength.current,
-      // list.current.children[playersLength.current]
-    );
+    // console.log(
+    //   playersLength
+    //   // playersLength.current,
+    //   // list.current.children[playersLength.current]
+    // );
   }
 
   return (
     <div>
       PlayerRandomizer
-      <ul ref={list}>
+      {/* <ul ref={list}> */}
+      {/* <ul>
         {players.map((player, index) => {
           return (
             <li
@@ -40,7 +42,16 @@ export default function PlayerRandomizer({
             </li>
           );
         })}
-      </ul>
+      </ul> */}
+      {players.map((player, index) => {
+        return (
+          <PlayerCrest
+            key={index}
+            player={player}
+            hide={index <= playersLength}
+          />
+        );
+      })}
       {playersLength < 0 && (
         <button onClick={handleOnClick}>Nästa omgång</button>
       )}
