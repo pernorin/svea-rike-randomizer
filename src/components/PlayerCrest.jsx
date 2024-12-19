@@ -1,7 +1,14 @@
-import React from 'react'
+import React from 'react';
+//import image from '../assets/Brahe.png'
 
-export default function PlayerCrest({player, hide}) {
+export default function PlayerCrest({ player, hide }) {
+  // const imagePath = `../assets/${player}.png`;
+  
   return (
-    <div className={hide ? 'hide' : undefined}>{player}</div>
-  )
+    <div className={hide ? 'hide' : undefined}>
+      {/* <img src={require(`../assets/${player}.png`)} alt='' height='100' /> */}
+      <img src={`${player}.png`} alt='' height='60' />      
+      {player}
+    </div>
+  );
 }
