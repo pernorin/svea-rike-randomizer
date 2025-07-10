@@ -1,7 +1,7 @@
 import React from 'react';
 //import image from '../assets/Brahe.png'
 
-export default function PlayerCrest({ player, hide }) {
+export default function PlayerShield({ player, hide }) {
   // const imagePath = `../assets/${player}.png`;
   
   return (

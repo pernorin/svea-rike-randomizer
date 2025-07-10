@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import PlayerCrest from './PlayerCrest';
+import PlayerShield from './PlayerShield';
 //  https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
 export default function PlayerRandomizer({
   players,
@@ -45,7 +45,7 @@ export default function PlayerRandomizer({
       </ul> */}
       {players.map((player, index) => {
         return (
-          <PlayerCrest
+          <PlayerShield
             key={index}
             player={player}
             hide={index <= playersLength}
