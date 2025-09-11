@@ -7,10 +7,13 @@ export default function PlayerRandomizer({
   shufflePlayers,
 }) {
   const [playersLength, setPlayersLength] = useState(players.length - 1);
-  //const list = useRef();
 
   function handleOnClick() {
     const playerArray = [...players];
+
+    playerArray.forEach((player) => {
+      player.status = 'hidden';
+    });
     shufflePlayers(playerArray);
     setPlayers(playerArray);
     setPlayersLength(players.length - 1);
@@ -20,43 +23,50 @@ export default function PlayerRandomizer({
     if (playersLength >= 0) {
       setPlayersLength((prev) => prev - 1);
     }
-    // console.log(
-    //   playersLength
-    //   // playersLength.current,
-    //   // list.current.children[playersLength.current]
-    // );
+    players.forEach((player) => {
+      if (player.status === 'current') {
+        // console.log(player);
+        player.status = 'previous';
+      }
+    });
+    // console.log(playersLength, players.length);
+    // console.log('p:', players);
+    // console.log(players[playersLength]);
+    
+    players[playersLength].status = 'current';    
   }
+
+  /*
+
+  Flytta funktionalitet för att sätta player array och blanda till en custom hook?
+
+  Gör så att alla shields inte renderas om vid varje knapptryck ( sätt klasser previous och current)
+
+
+  */
 
   return (
     <div>
-      PlayerRandomizer
-      {/* <ul ref={list}> */}
-      {/* <ul>
-        {players.map((player, index) => {
-          return (
-            <li
-              key={index}
-              className={index <= playersLength ? 'hide' : undefined}
-            >
-              {index} {player}{' '}
-            </li>
-          );
-        })}
-      </ul> */}
+      {/* PlayerRandomizer */}
+
       {players.map((player, index) => {
         return (
           <PlayerShield
             key={index}
-            player={player}
-            hide={index <= playersLength}
+            playerName={player.name}
+            playerStatus={player.status}
           />
         );
       })}
       {playersLength < 0 && (
-        <button onClick={handleOnClick}>Nästa omgång</button>
+        <button autoFocus onClick={handleOnClick}>
+          Nästa omgång
+        </button>
       )}
       {playersLength >= 0 && (
-        <button onClick={handleNextPlayer}>Nästa spelare</button>
+        <button autoFocus onClick={handleNextPlayer}>
+          Nästa spelare
+        </button>
       )}
     </div>
   );

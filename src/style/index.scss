@@ -1,2 +1,13 @@
 @use './colors' as *;
 @use './fonts' as *;
+
+
+.hidden{
+  background-color: blue;
+  color: blue;
+
+  img{
+    position: relative;
+    z-index: -10;
+  }
+}

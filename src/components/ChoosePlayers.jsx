@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function ChoosePlayers({ handleSetPlayers }) {
   const [numberOfPlayers, setNumberOfPlayers] = useState(0);
@@ -15,6 +15,9 @@ export default function ChoosePlayers({ handleSetPlayers }) {
       <button onClick={() => handleSetPlayers(parseInt(numberOfPlayers))}>
         Välj
       </button>
+      {/* <button onClick={() => usePlayerSelection(parseInt(numberOfPlayers))}>
+        Välj
+      </button> */}
     </>
   );
 }
