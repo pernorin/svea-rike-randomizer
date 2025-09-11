@@ -11,6 +11,7 @@ export default function ChoosePlayers({ handleSetPlayers }) {
         min='2'
         max='5'
         onChange={(e) => setNumberOfPlayers(e.target.value)}
+        autoFocus
       />
       <button onClick={() => handleSetPlayers(parseInt(numberOfPlayers))}>
         Välj
