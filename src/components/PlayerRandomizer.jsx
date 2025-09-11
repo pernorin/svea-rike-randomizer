@@ -20,10 +20,12 @@ export default function PlayerRandomizer({
   }
 
   function handleNextPlayer() {
+    const playerArray = [...players];
+
     if (playersLength >= 0) {
       setPlayersLength((prev) => prev - 1);
     }
-    players.forEach((player) => {
+    playerArray.forEach((player) => {
       if (player.status === 'current') {
         // console.log(player);
         player.status = 'previous';
@@ -33,7 +35,8 @@ export default function PlayerRandomizer({
     // console.log('p:', players);
     // console.log(players[playersLength]);
     
-    players[playersLength].status = 'current';    
+    playerArray[playersLength].status = 'current';
+    setPlayers(playerArray);  
   }
 
   /*
