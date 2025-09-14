@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import PlayerShield from './PlayerShield';
+import PlayerShield from './Playershield';
+// import PlayerShield from './PlayerShield';
 //  https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
 export default function PlayerRandomizer({
   players,
@@ -49,7 +50,7 @@ export default function PlayerRandomizer({
   */
 
   return (
-    <div>
+    <div className='shields-area'>
       {/* PlayerRandomizer */}
 
       {players.map((player, index) => {
@@ -62,12 +63,12 @@ export default function PlayerRandomizer({
         );
       })}
       {playersLength < 0 && (
-        <button autoFocus onClick={handleOnClick}>
+        <button  className='stoke-light' autoFocus onClick={handleOnClick}>
           Nästa omgång
         </button>
       )}
       {playersLength >= 0 && (
-        <button autoFocus onClick={handleNextPlayer}>
+        <button  className='stoke-light' autoFocus onClick={handleNextPlayer}>
           Nästa spelare
         </button>
       )}
