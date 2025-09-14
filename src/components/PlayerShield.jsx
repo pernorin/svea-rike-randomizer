@@ -1,5 +1,5 @@
 export default function PlayerShield({ playerName, playerStatus }) {
-  const imagePath = `../src/assets/${playerName}.png`;
+  const imagePath = `/svea-rike-randomizer/src/assets/${playerName}.png`;
   // console.log('render shield');
 
   return (
