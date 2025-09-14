@@ -1,11 +1,13 @@
 export default function PlayerShield({ playerName, playerStatus }) {
   const imagePath = `/svea-rike-randomizer/src/assets/${playerName}.png`;
+  // const imagePath = `${playerName}.png`;
   // console.log('render shield');
 
   return (
     <div className={playerStatus}>
       <div className="shield-cover"></div>
       <img src={imagePath} alt='' height='60' />
+      {/* <img src={`${playerName}.png`} alt='' height='60' /> */}
       <p className='charm-regular'>{playerName} </p>
     </div>
   );
