@@ -31,13 +31,13 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Svea Rike</h1>
+    <div className='container'>
+      <h1 className='stoke-regular'>Svea Rike</h1>
       {players.length < 1 && (
         <ChoosePlayers handleSetPlayers={handleSetPlayers} />
       )}
       {players.length > 1 && (
-        <button onClick={() => setPlayers([])}>Avsluta</button>
+        <button  className='stoke-light' onClick={() => setPlayers([])}>Avsluta</button>
       )}
       {players.length > 1 && (
         <PlayerRandomizer
@@ -46,7 +46,7 @@ function App() {
           shufflePlayers={shufflePlayers}
         />
       )}
-    </>
+    </div>
   );
 }
 

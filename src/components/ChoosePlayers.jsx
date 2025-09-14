@@ -5,15 +5,17 @@ export default function ChoosePlayers({ handleSetPlayers }) {
 
   return (
     <>
-      <h2>Hur många spelare?</h2>
+      <h2 className='charm-bold'>Välj antal spelare</h2>
       <input
         type='number'
         min='2'
         max='5'
         onChange={(e) => setNumberOfPlayers(e.target.value)}
         autoFocus
+        className='stoke-regular'
       />
-      <button onClick={() => handleSetPlayers(parseInt(numberOfPlayers))}>
+      
+      <button className='stoke-light' onClick={() => handleSetPlayers(parseInt(numberOfPlayers))}>
         Välj
       </button>
       {/* <button onClick={() => usePlayerSelection(parseInt(numberOfPlayers))}>
