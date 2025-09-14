@@ -1,11 +1,11 @@
 export default function PlayerShield({ playerName, playerStatus }) {
-  // const imagePath = `../assets/${player}.png`;
+  const imagePath = `../src/assets/${playerName}.png`;
   // console.log('render shield');
 
   return (
     <div className={playerStatus}>
       <div className="shield-cover"></div>
-      <img src={`../src/assets/${playerName}.png`} alt='' height='60' />
+      <img src={imagePath} alt='' height='60' />
       <p className='charm-regular'>{playerName} </p>
     </div>
   );
